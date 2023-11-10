@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h><br>
+        #include <stdlib.h><br>
+        
+        int* pq_dyn;       // Array to store values<br>
+        int* priorities;   // Array to store priorities<br>
+        int size = 0;<br>
+        
+        // Function to insert an element into the priority queue<br>
+        void insert(int** pq, int** prio, int value, int priority) {<br>
+            // Allocate more memory for pq_dyn and priorities<br>
+            int new_size = size + 1;<br>
+        
+            int* new_pq = (int*)malloc(new_size * sizeof(int));<br>
+            int* new_priorities = (int*)malloc(new_size * sizeof(int));<br>
+        
+            if (new_pq == NULL || new_priorities == NULL) {<br>
+                printf("Memory allocation failed.\n");<br>
+                exit(1);<br>
+            }<br>
+        
+            // Copy existing data to the new arrays<br>
+            for (int i = 0; i < size; i++) {<br>
+                new_pq[i] = (*pq)[i];<br>
+                new_priorities[i] = (*prio)[i];<br>
+            }
+        
+            // Free the old arrays and update pointers and size<br>
+            free(*pq);<br>
+            free(*prio);<br>
+            *pq = new_pq;<br>
+            *prio = new_priorities;<br>
+            size = new_size;<br>
+        
+            // Insert the new element at the end<br>
+            (*pq)[size - 1] = value;<br>
+            (*prio)[size - 1] = priority;<br>
+        
+            // Perform insertion logic to maintain max-heap priority order<br>
+            int current = size - 1;<br>
+            while (current > 0 && (*prio)[current] > (*prio)[(current - 1) / 2]) {<br>
+                // Swap values and priorities to maintain max-heap order<br>
+                int temp = (*pq)[current];<br>
+                int tempPriority = (*prio)[current];<br><br>
+                (*pq)[current] = (*pq)[(current - 1) / 2];<br>
+                (*prio)[current] = (*prio)[(current - 1) / 2];<br>
+                (*pq)[(current - 1) / 2] = temp;<br>
+                (*prio)[(current - 1) / 2] = tempPriority;<br>
+                current = (current - 1) / 2;<br>
+            }
+        }
+        
+        // Function to delete the element with the highest priority<br>
+        int delete(int** pq) {<br>
+            if (size == 0) {<br>
+                printf("Priority Queue is empty. Cannot delete.\n");<br>
+                return -1;<br>
+            }
+        
+            // Get the highest-priority element (at the root)<br>
+            int deletedValue = (*pq)[0];<br>
+        
+            // Replace the root with the last element<br>
+            (*pq)[0] = (*pq)[size - 1];<br>
+            (*prio)[0] = (*prio)[size - 1];<br><br>
+        
+            // Reduce the size of the priority queue<br>
+            size--;<br>
+        
+            // Perform deletion logic to maintain max-heap order<br>
+            int current = 0;<br>
+            while (1) {<br>
+                int left = 2 * current + 1;<br>
+                int right = 2 * current + 2;<br>
+                int largest = current;<br>
+        
+                // Find the largest of the current node and its children<br>
+                if (left < size && (*prio)[left] > (*prio)[largest]) {<br>
+                    largest = left;<br>
+                }
+                if (right < size && (*prio)[right] > (*prio)[largest]) {<br>
+                    largest = right;<br>
+                }
+        
+                if (largest != current) {<br>
+                    // Swap values and priorities to maintain max-heap order<br>
+                    int temp = (*pq)[current];<br><br>
+                    int tempPriority = (*prio)[current];<br>
+                    (*pq)[current] = (*pq)[largest];<br>
+                    (*prio)[current] = (*prio)[largest];<br>
+                    (*pq)[largest] = temp;<br>
+                    (*prio)[largest] = tempPriority;<br>
+                    current = largest;<br>
+                } else {<br>
+                    break;<br>
+                }
+            }
+        
+            return deletedValue;<br>
+        }
+        
+        // Function to peek at the element with the highest priority<br>
+        int peek(int** pq) {<br>
+            if (size == 0) {<br>
+                printf("Priority Queue is empty. Cannot peek.\n");<br>
+                return -1;<br>
+            }
+            // The highest-priority element is always at the root.<br>
+            return (*pq)[0];<br>
+        }
+        
+        int main() {<br>
+            pq_dyn = (int*)malloc(10 * sizeof(int));  // Initialize with an initial capacity<br>
+            priorities = (int*)malloc(10 * sizeof(int));<br>
+        
+            if (pq_dyn == NULL || priorities == NULL) {<br>
+                printf("Memory allocation failed.\n");<br>
+                exit(1);<br>
+            }
+        
+            while (1) {<br>
+                int choice;<br>
+                printf("\nMenu:\n");<br>
+                printf("1. Insert\n");<br>
+                printf("2. Delete\n");<br>
+                printf("3. Peek\n");<br>
+                printf("4. Exit\n");<br>
+                printf("Enter your choice: ");<br>
+                scanf("%d", &choice);<br>
+        
+                switch (choice) {<br>
+                    case 1: {<br>
+                        int value, priority;<br>
+                        printf("Enter an integer value: ");<br>
+                        scanf("%d", &value);<br>
+                        printf("Enter its priority: ");<br>
+                        scanf("%d", &priority);<br>
+                        insert(&pq_dyn, &priorities, value, priority);<br>
+                        break;<br>
+                    }
+                    case 2: {<br>
+                        int deletedValue = delete(&pq_dyn);<br>
+                        if (deletedValue != -1) {<br>
+                            printf("Deleted element with value: %d\n", deletedValue);<br>
+                        }
+                        break;<br>
+                    }
+                    case 3: {<br>
+                        int topValue = peek(&pq_dyn);<br><br>
+                        if (topValue != -1) {<br>
+                            printf("Top element with value: %d\n", topValue);<br>
+                        }
+                        break;<br>
+                    }
+                    case 4:<br>
+                        // Clean up and exit<br>
+                        free(pq_dyn);<br>
+                        free(priorities);<br>
+                        return 0;<br>
+                    default:<br>
+                        printf("Invalid choice. Please try again.\n");<br>
+                }
+            }<br>
+        
+            return 0;<br>
+        }<br><br>
+</body>
+</html>

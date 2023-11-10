@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h> <br>
+        #include <string.h> <br>
+        void main() <br>
+        {
+            char Sentence[100], coppied[100]; <br>
+            int i=0,j=0; <br> 
+            puts("Enter the text : "); <br>
+            gets(Sentence); <br>
+             int length = 0; <br>
+            for (i = 0; Sentence[i] != '\0'; i++) <br>
+            {
+                length++; <br>
+            }
+             for (i = length - 1, j = 0; i >= 0; i--, j++) { <br>
+                coppied[j] = Sentence[i]; <br>
+            }
+        
+            coppied[j] = '\0';  // Null-terminate the reversed string <br>
+        
+            printf("Original string: %s\n", Sentence); <br>
+            printf("Reversed string: %s\n", coppied); <br>
+        }
+</body>
+</html>

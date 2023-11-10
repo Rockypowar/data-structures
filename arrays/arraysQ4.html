@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    //program to Enter an array from user and print the number which is even ?<br>
+
+
+    #include<stdio.h><br>
+
+    #include<conio.h><br>
+
+    int main()
+    {<br>
+
+        int array1[10],array2[10],i,j=3;<br>
+
+        printf("Space allocation form 10 values is granted successfully");<br>
+
+        for ( i = 0; i < 3; i++)<br>
+
+        {
+            printf("\nEnter %d value : ",i+1);<br>
+
+            scanf("%d",&array1[i]);<br>
+
+        }
+    
+           for ( i = 0; i < 3; i++)<br>
+
+        {
+            
+            array2[j]=array1[i];<br>
+
+            j--;
+        }
+                printf("\nGiven values in first array are succesfully stored in second array in reverse order : ");<br>
+
+    
+           for ( i = 3; i >=0; i--)<br>
+
+        {
+            printf(" \n%d. value is :  %d \n",i,array2[i]);<br>
+
+        }
+        
+    }
+    
+    
+    OUTPUT : - <br>
+
+    
+    Space allocation form 10 values is granted successfully<br>
+
+    Enter 1 value : 12<br>
+
+    
+    Enter 2 value : 14<br>
+
+    
+    Enter 3 value : 18<br>
+
+    
+    Given values in first array are succesfully stored in second array in reverse order :<br>
+
+    3. value is :  12<br>
+
+    2. value is :  14<br>
+
+    1. value is :  18
+</body>
+</html>

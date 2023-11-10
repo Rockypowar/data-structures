@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h> <br>
+        #include <string.h> <br>
+        int compare(char word[],char word2[]) <br>
+        {
+            int comp = -1; <br>
+             int length2=0,length1 = 0, i = 0,incr=0; <br>
+            for (i = 0; word[i] != '\0'; i++) <br>
+            {
+                length1++; <br>
+            }
+            for (i = 0; word2[i] != '\0'; i++) <br>
+            {
+                length2++; <br>
+            }
+            if (length1!=length2) <br>
+            {
+                return comp; <br>
+            }
+            for ( i = 0; i < length1; i++) <br>
+            {
+                if (word[i]==word2[i]) <br>
+                {
+                    incr++; <br>
+                }
+                
+            }
+            if (incr==length1) <br>
+            {
+                comp=incr; <br>
+                return comp; <br>
+            }
+            else{ <br>
+                return -1; <br>
+            }
+            
+        }
+        void main() <br>
+        {
+            char Sentence1[100],Sentence2[100]; <br>
+            int comp=0; <br>
+            puts("Enter the text : "); <br>
+            gets(Sentence1); <br>
+            puts("Enter the text2 : "); <br>
+            gets(Sentence2); <br>
+            comp=compare(Sentence1,Sentence2); <br>
+            if (comp==-1) <br>
+            {
+                printf("\nSentence are differnt.------!"); <br>
+            } <br>
+            else{ <br>
+                printf("\nSentences are same with given length = %d",comp); <br>
+            }
+        }
+</body>
+</html>

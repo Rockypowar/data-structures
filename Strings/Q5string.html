@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h> <br>
+        #include <string.h> <br>
+        void toggle(char word[]) <br>
+        {
+            int i = 0; <br>
+            for (i = 0; word[i] != '\0'; i++) <br>
+            {
+                if (word[i] >= 97 && word[i] <= 122) <br>
+                {
+                    word[i] = word[i] - 32; <br> 
+                }
+                else if(word[i] >= 65 && word[i] <= 90) <br>
+                { <br>
+                    word[i] = word[i] + 32; <br>
+                }
+            }
+        }
+        void main() <br>
+        {
+            char Sentence[100]; <br>
+            puts("Enter the text : "); <br>
+            gets(Sentence); <br>
+            toggle(Sentence); <br>
+            printf("Sentence after title text convert : %s", Sentence); <br>
+        }
+    
+</body>
+</html>

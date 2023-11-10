@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        //C program to enter an array from user and print the array in reverse order ? <br>
+
+        #include<stdio.h> <br>
+        
+        int main(){   <br>
+        int arr[10],i; <br>
+        
+        printf("You can only enter upto 10 values\n"); <br>
+        
+        printf("Enter the elements in Array\n");<br>
+        
+        for( i=0;i<=9;i++) <br>
+        {
+        printf("%d Element:",i+1);<br>
+        
+        scanf("%d",&arr[i]);<br>
+        
+        printf("\n");<br>
+        }
+        
+        printf("The Array in reverse order is given below\n");<br>
+        for( i=9;i>=0;i--)<br>
+        printf("%d\t",arr[i]);<br>
+        return 0;<br>
+        }
+        
+        
+        OUTPUT:- <br>
+        
+        You can only enter upto 10 values<br>
+        Enter the elements in Array<br>
+        1 Element:2<br>
+        2 Element:4<br>
+        3 Element:6<br>
+        4 Element:8<br>
+        5 Element:10<br>
+        6 Element:12<br>
+        7 Element:14<br>
+        8 Element:16<br>
+        9 Element:18<br>
+        10 Element:20<br>
+        
+        The Array in reverse order is given below<br>
+        20      18      16      14      12      10      8       6       4       2
+
+</body>
+</html>

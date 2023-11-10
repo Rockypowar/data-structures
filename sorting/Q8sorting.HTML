@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h><br>
+
+        #include <conio.h><br>
+
+        #include <time.h>
+            <br>
+
+        int partition(int arr[], int low, int high)<br>
+
+        {
+            int pivot, temp;<br>
+
+            pivot = arr[low];<br>
+
+            int i, j;
+            i = low + 1; // find big<br>
+
+            j = high;    // find small<br>
+
+            do
+            {
+                while (arr[i] <= pivot)<br>
+
+                {
+                    i++; // going forward<br>
+
+                }
+                while (arr[j] > pivot)<br>
+                <br>
+
+                {
+                    j--; // going backward<br>
+
+                }
+                if (i < j)<br>
+
+                {
+                    temp = arr[i];<br>
+
+                    arr[i] = arr[j];<br>
+
+                    arr[j] = temp;
+                }<br>
+
+            } while (i < j);<br>
+
+        // swap after these elements fnd positions they need<br>
+
+             temp=arr[low];<br>
+
+             arr[low]=arr[j];<br>
+
+             arr[j]=temp;<br>
+
+             return j;//the index where pivot/low settles.<br>
+
+        }
+        
+        void quick_sort(int ary[], int low, int high)<br>
+
+        {
+            int partition_index; // index of pivot after partition<br>
+
+            if (low < high)
+            {<br>
+
+                partition_index = partition(ary, low, high);<br>
+
+                quick_sort(ary, low, partition_index - 1);  // left subarray<br>
+
+                quick_sort(ary, partition_index + 1, high); // right subarray<br>
+
+            }
+        }
+        
+        void main()<br>
+
+        {
+            int ary[10], i, count;<br>
+
+            printf("Enter your array size : ");<br>
+
+            scanf("%d", &count);<br>
+
+            for (i = 0; i < count; i++)<br>
+
+            {
+                printf("\nEnter %d value : ", i + 1);<br>
+
+                scanf("%d", &ary[i]);
+            }<br>
+
+            clock_t start = clock();<br>
+
+            quick_sort(ary, 0, count - 1);<br>
+
+            clock_t end = clock();<br>
+
+            for (i = 0; i < count; i++)<br>
+
+            {
+                printf("%d,", ary[i]);<br>
+
+            }
+            double time_complexity = ((double)(end - start)) / CLOCKS_PER_SEC;<br>
+
+            printf("\nTime taken: %f seconds\n", time_complexity);<br>
+
+        }
+</body>
+</html>

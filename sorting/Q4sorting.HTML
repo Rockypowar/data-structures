@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h><br>
+
+    #include <time.h><br>
+
+    
+    // Function to perform Bubble Sort by recursion<br>
+
+    void bubble_rec(int arr[], int n)<br>
+
+    {
+        int i, temp;<br>
+
+        if (n == 1)<br>
+
+        {
+            return; // 1 element is always sorted<br>
+
+        }
+    
+        // One pass of Bubble Sort to move the largest element to the end<br>
+
+        for (i = 0; i < n - 1; i++)<br>
+
+        {
+            if (arr[i] > arr[i + 1])<br>
+
+            {
+                // Swap arr[i] and arr[i + 1]<br>
+
+                temp = arr[i];<br>
+
+                arr[i] = arr[i + 1];<br>
+
+                arr[i + 1] = temp;<br>
+
+            }
+        }
+    
+        // Recursively sort the remaining (n-1) elements<br>
+
+        // so every time it will sort 1 element<br>
+
+        bubble_rec(arr, n - 1);<br>
+
+    }
+    int main()
+    {<br>
+
+        int i, n;
+        printf("Enter the number of elements in the array: ");<br>
+
+        scanf("%d", &n);<br>
+
+    
+        int arr[n];<br>
+
+        printf("Enter %d integers:\n", n);<br>
+
+        for (i = 0; i < n; i++)<br>
+
+        {
+            scanf("%d", &arr[i]);<br>
+
+        }
+    
+        // Record the start time<br>
+
+        clock_t start = clock();
+        <br>
+
+        // Perform Bubble Sort<br>
+
+        bubble_rec(arr, n);<br>
+
+    
+        // Record the end time<br>
+
+        clock_t end = clock();<br>
+
+    
+        printf("Sorted array using Bubble Sort(recursion):\n");<br>
+
+        for (i = 0; i < n; i++)<br>
+
+        {
+            printf("%d ", arr[i]);<br>
+
+        }
+        printf("\n");<br>
+
+    
+        // Calculate the time taken in seconds<br>
+
+        double time_complexity = ((double)(end - start)) / CLOCKS_PER_SEC;<br>
+
+        printf("\nTime taken: %f seconds\n", time_complexity);<br>
+
+    
+        return 0;
+    }
+</body>
+</html

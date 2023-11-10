@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h> <br>
+        #include <string.h> <br>
+        void title(char word[]) <br>
+        {
+            int length = 0, i = 0; <br>
+            for (i = 0; word[i] != '\0'; i++) <br>
+            {
+                length++; <br>
+            }
+            for (i = 0; i < length; i++) <br>
+            {
+                if ((word[i] >= 'a' && word[i] <= 'z') || (word[i] >= 'A' && word[i] <= 'Z')) <br>
+                {
+                    if (i == 0 || word[i - 1] == ' ') <br>
+                    {
+                        if (word[i] >= 'a' && word[i] <= 'z') <br>
+                        {
+                            word[i] = word[i] - 32; // between 97 to 122 <br>
+                        }
+                    }
+                    else <br>
+                    {
+                        if (word[i] >= 'A' && word[i] <= 'Z') // for lower case, if any upper case found besides desired ones. <br>
+                        {
+                            word[i] = word[i] + 32; <br>
+                        }
+                    }
+                } <br>
+            }
+        }
+        void main() <br>
+        {
+            char Sentence[100]; <br>
+            puts("Enter the text : "); <br>
+            gets(Sentence); <br>
+            title(Sentence); <br>
+            printf("Sentence after title text convert : %s", Sentence); <br>
+        }
+    
+</body>
+</html>

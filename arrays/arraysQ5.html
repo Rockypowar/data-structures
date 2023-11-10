@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    //program to Enter an array from user and print the number which is even ?<br>
+
+
+    #include<stdio.h><br>
+
+    #include<conio.h><br>
+
+    int main()<br>
+
+    {<br>
+
+        int array1[10],i;<br>
+
+        printf("Space allocation form 10 values is granted successfully");<br>
+
+        for ( i = 0; i < 10; i++)
+        {<br>
+
+            printf("\nEnter %d value : ",i+1);<br>
+
+            scanf("%d",&array1[i]);<br>
+
+        }
+    
+            printf("Even numbers in this given array are: \n");<br>
+
+           for ( i = 0; i < 10; i++)<br>
+
+        {<br>
+
+            
+            if (array1[i]%2==0)<br>
+
+            {
+                printf("%d\n",array1[i]);<br>
+
+            }
+            
+        }
+        
+    }
+    
+    
+    OUTPUT : - <br>
+
+    
+    Space allocation form 10 values is granted successfully<br>
+
+    Enter 1 value : 10<br>
+    Enter 2 value : 5<br>
+
+    Enter 3 value : 8<br>
+
+    Enter 4 value : 22<br>
+
+    Enter 5 value : 15<br>
+
+    Even numbers in this given array are: 
+    12
+    8
+    22
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h><br>
+
+        #include <time.h><br>
+
+        
+        void selection(int arr[], int n, int start_indx) {<br>
+
+            //check if start index has reached it's end.<br>
+
+            //indicating array is completed<br>
+
+            if (start_indx >= n - 1) {<br>
+
+                return;<br>
+
+            }
+            //it will keep track of minimum value of unsorted array<br>
+
+            int min_indx = start_indx;<br>
+
+            //for loop to find minimum value in array<br>
+
+            for (int i = start_indx + 1; i < n; i++) {<br>
+
+                if (arr[i] < arr[min_indx]) {<br>
+
+                    min_indx = i;<br>
+
+                }
+            }
+        //i minindex and startindex differ it indicates<br>
+
+        //a new smaller element was found in unsorted array<br>
+
+            if (min_indx != start_indx) {<br>
+
+                //so let's swap the element and bring it to the first<br>
+
+                int temp = arr[start_indx];<br>
+
+                arr[start_indx] = arr[min_indx];<br>
+
+                arr[min_indx] = temp;<br>
+
+            }
+
+        //recursively calling the function with incremented value of start index<br>
+
+            selection(arr, n, start_indx + 1);<br>
+
+        }
+        
+        void main() {<br>
+
+            int i,n;<br>
+
+            printf("Enter the number of elements in the array: ");<br>
+
+            scanf("%d", &n);<br>
+
+        
+            int arr[n];<br>
+
+            printf("Enter %d integers:\n", n);<br>
+
+            for (i = 0; i < n; i++) {<br>
+
+                scanf("%d", &arr[i]);<br>
+
+            }
+        
+            // Record the start time<br>
+
+            clock_t start = clock();<br>
+
+        
+            // Perform Selection Sort recursively<br>
+
+            selection(arr, n, 0);<br>
+
+        
+            // Record the end time<br>
+
+            clock_t end = clock();<br>
+
+        
+            // Calculate the time taken in seconds<br>
+
+            double time_complexity = ((double)(end - start)) / CLOCKS_PER_SEC;<br>
+
+        
+            printf("Sorted array using Selection Sort:\n");<br>
+
+            for (int i = 0; i < n; i++) {<br>
+
+                printf("%d ", arr[i]);<br>
+
+            }
+        
+            printf("\nTime taken: %f seconds\n", time_complexity);<br>
+
+        
+        }
+</body>
+</html>

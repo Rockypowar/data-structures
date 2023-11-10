@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+#include <stdio.h><br>
+
+    #include <string.h><br>
+
+    #include <stdlib.h><br>
+
+    #include <time.h><br>
+
+    void swap(char *one, char *two)<br>
+
+    {
+        char temp[100];<br>
+
+        strcpy(temp, one);<br>
+
+        strcpy(one, two);<br>
+
+        strcpy(two, temp);<br>
+
+    }
+    // perform Bubble Sort by recursion<br>
+
+    void bubble_string_recursive(char *arr[], int n)<br>
+
+    {
+        int i;<br>
+
+        if (n <= 1)<br>
+
+        {
+            return; // when only one integer is present the array is already sorted<br>
+
+        }<br>
+
+    
+        for (i = 0; i < n - 1; i++)<br>
+
+        {
+            if (strcmp(arr[i], arr[i + 1]) > 0)<br>
+
+            {
+                swap(arr[i], arr[i + 1]);<br>
+
+            }
+        }
+        // whi always n-1?? easy,<br>
+
+    // reduces the array size--> (n-1) for the next call, ensuring that the largest <br>
+
+    // (or smallest, depending on the sorting order) <br>
+
+    // element has "bubbled" to the correct position at the end (or beginning) of the array.<br>
+
+        bubble_string_recursive(arr, n - 1);<br>
+
+    }
+    int main()<br>
+
+    {
+    int i, n = 0;<br>
+
+    printf("Enter the number of elements in the array: ");<br>
+
+    scanf("%d", &n);<br>
+
+    
+    char *arr[n]; // let's get this thing clear that this is the size of string array<br>
+
+    for (i = 0; i < n; i++)<br>
+
+    {
+        arr[i] = (char *)malloc(100); // and here memory is allocated to the string not array<br>
+
+        printf("Enter string %d: ", i + 1);<br>
+
+        scanf("%s", arr[i]);<br>
+
+    }
+    
+    // start time<br>
+
+    clock_t start = clock();<br>
+
+    
+    // Perform Bubble Sort<br>
+
+    bubble_string_recursive(arr, n);<br>
+
+    // end time<br>
+
+    clock_t end = clock();<br>
+
+    
+    printf("Sorted array using Bubble Sort:\n");<br>
+
+    for (i = 0; i < n; i++)<br>
+
+    {
+        printf("%s\n ", arr[i]);<br>
+
+    }
+    
+    // Calculate the time taken in seconds<br>
+
+    double timeTaken = ((double)(end - start)) / CLOCKS_PER_SEC;<br>
+
+    printf("\nTime taken: %f seconds\n", timeTaken);<br>
+
+    
+    // Deallocate memory for strings<br>
+
+    for (i = 0; i < n; i++)<br>
+
+    {
+        free(arr[i]);<br>
+
+    }
+    return 0;<br>
+
+    }
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h> <br>
+        #include <string.h> <br>
+        void copy(char word[], char cpy[]) <br>
+        {
+            int i = 0; <br>
+            for (i = 0; word[i] != '\0'; i++) <br>
+            {
+                cpy[i] = word[i]; <br>
+            }
+        }
+        void main() <br> <br>
+        {
+            char Sentence[100], coppied[100]; <br>
+            puts("Enter the text : "); <br>
+            gets(Sentence); <br>
+            copy(Sentence, coppied); <br>
+            printf("Coppied sentence can be seen as follow : %s", coppied); <br>
+        }
+</body>
+</html>

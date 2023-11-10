@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MY WEBSITE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: lightblue;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav li {
+            position: relative;
+            margin: 0 20px;
+        }
+        nav a {
+            color: orangered;
+            text-decoration: none;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .dropdown-content a:hover {
+            background-color: orange;
+        }
+        .icon {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MY WEBSITE</h1>
+    </header>
+    <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="#">arrays</a>
+                <div class="dropdown-content">
+                    <a href="arrays/arraysQ1.html">Q1Enter an array from user and display all the value?
+                    </a>
+                    <a href="arrays/arraysQ2.html">Q2Enter an array from user and print the array in reverse order ?
+                    </a>
+                    <a href="arrays/arraysQ3.html">Q3Enter an array from user and copy the array into second array?
+
+                    </a>
+                    <a href="arrays/arraysQ4.html">Q4Enter an array from user and copy it into another array in reverse order?
+
+                    </a>
+                    <a href="arrays/arraysQ5.html">Q5Enter an array from user and print the number which is even ?</a>
+                    <a href="arrays/arraysQ6.html">Q6Enter an array from user and print the number which is positive ?
+                    </a>
+                    <a href="arrays/arraysQ7.html">Q7 Enter an array from user and square all the values of array ?
+                        </a>
+                    <a href="arrays/arraysQ8.html">Q8Enter an array from user and find maximum and minimum value?</a>
+                    <a href="arrays/arraysQ9.html">Q9Enter an array from user and find the k-th smallest value?
+                    </a>
+                    <a href="arrays/arraysQ10.html">Q10Enter an array from user and add all values ?
+                    </a>
+                    <a href="arrays/arraysQ11.html">Q11Enter an array from user and find the duplicate values?
+                    </a>
+                    <a href="arrays/arraysQ12.html">Q12Enter an array from user and remove the duplicate values and fill with zero?
+                    </a>
+                    <a href="arrays/arraysQ13.html">Q13Enter an array from user and count the duplicate values?
+                    </a>
+
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">string</a>
+                <div class="dropdown-content">
+                    <a href="Strings/Q1string.html">Q1Enter the string from user and convert in uppercase ?</a>
+                    <a href="Strings/Q2string.html">Q2Enter the string from user and convert in lowercase ?
+                    </a>
+                    <a href="Strings/Q3string.html">Q3Enter the string from user and convert into sentence case ?
+                    </a>
+                    <a href="Strings/Q4string.html">Q4
+                        Enter the string from user and convert into title case ?
+                        
+                        </a>
+                    <a href="Strings/Q5string.html">Q5Enter the string from user and convert into toggle case ?
+                    </a>
+                    <a href="Strings/Q6string.html">Q6enter the string from user and final length of the string ?
+
+                    </a>
+                    <a href="Strings/Q7string.html">Q7Enter two strings from user and compare those strings that they are equal or not?
+                    </a>
+                    <a href="Strings/Q8string.html">Q8Enter two strings from user and concatenate those strings in another string and display the answer?
+                    </a>
+                    <a href="Strings/Q9string.html">Q9
+                        Enter the string from user and copy it into another string variable?
+                        </a>
+                    <a href="Strings/Q10string.html">Q10
+                        Enter the string from user, enter the index number and print character present on that index?</a>
+                    <a href="Strings/Q11string.html">Q11Enter the string from user and check its palindrome or not?
+                    </a>
+                    <a href="Strings/Q12string.html">Q12Enter the string from the user and print each character in new line?
+                    </a>
+                    <a href="Strings/Q13string.html">Q13
+                        Enter the string from the user and copy reverse of the string into another string?</a>
+                </div>
+            </li>
+           
+            <li class="dropdown">
+                <a href="#">searching</a>
+                <div class="dropdown-content">
+                    <a href="searching/Q1searchig.html">Q1Enter a integer array from the user, enter an integer value and perform linear search algorithm through iteration.?
+                    </a>
+                    <a href="searching/Q2searchig.html">Q2enter a string from the user, enter a character and perform linear search algorithm through recursion.?
+
+                    </a>
+                    <a href="searching/Q3searchig.html">Q3
+                        Enter a integer array from the user, enter an integer value and perform linear search algorithm through recursion.?
+                        </a>
+                    <a href="searching/Q4searchig.html">Q4Enter a string from the user, enter a character and perform linear search algorithm through iteration.?
+                    </a>
+                    <a href="searching/Q5searchig.html">Q5
+                        Enter a integer array from the user, enter an integer value and perform binary search algorithm through iteration.?
+                        </a>
+                    <a href="searching/Q6searchig.html">Q6
+                        Enter a string from the user, enter a character and perform binary search algorithm through recursion.
+                        </a>
+                    <a href="searching/Q7searchig.html">Q7
+                        Enter a integer array from the user, enter an integer value and perform binary search algorithm through recursion.?
+                        </a>
+                    <a href="searching/Q8searchig.html">Q8
+                        Enter a string from the user, enter a character and perform binary search algorithm through iteration.?
+                        </a>
+                    <a href="searching/Q9searchig.html">Q9Calculate the best and worst complexity of the linear searching algorithm with exact time taken by the algorithm on integer array?
+                    </a>
+                    <a href="searching/Q10searchig.html">Q10
+                        Calculate the best and worst complexity of the binary searching algorithm with exact time taken by the algorithm on integer array.?
+                        </a>
+                    
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">sorting</a>
+                <div class="dropdown-content">
+                    <a href="sorting/Q1sorting.HTML">Q1Enter a integer array from the user and perform selection sort algorithm through iteration. also calculate the worst and best complexity with exact time.?
+                    </a>
+                    <a href="sorting/Q2sorting.HTML">Q2Enter a integer array from the user and perform selection sort algorithm through recursion. also calculate the worst and best complexity with exact time.?
+                    </a>
+                    <a href="sorting/Q3sorting.HTML">Q3Enter a integer array from the user and perform bubble sort algorithm through iteration. also calculate the worst and best complexity with exact time. ?</a>
+                    <a href="sorting/Q4sorting.HTML">Q4
+                        Enter a integer array from the user and perform bubble sort algorithm through recursion. also calculate the worst and best complexity with exact time?
+                        
+                        </a>
+                    <a href="sorting/Q5sorting.HTML">Q5
+                        Enter a integer array from the user and perform insertion sort algorithm through iteration. also calculate the worst and best complexity with exact time.?
+                        </a>
+                    <a href="sorting/Q6sorting.HTML">Q6
+                        Enter a integer array from the user and perform insertion sort algorithm through recursion. also calculate the worst and best complexity with exact time.?</a>
+                    <a href="sorting/Q7sorting.HTML">Q7
+                        Enter a integer array from the user and perform merge sort algorithm through recursion. also calculate the worst and best complexity with exact time.?
+                        </a>
+                    <a href="sorting/Q8sorting.HTML">Q8
+                        Enter a integer array from the user and perform quick sort algorithm through recursion. also calculate the worst and best complexity with exact time.?
+                        
+                        </a>
+                    <a href="sorting/Q9sorting.HTML">Q9
+                        Enter a string array from the user and perform selection sort algorithm through iteration. also calculate the worst and best complexity with exact time?
+                        </a>
+                    <a href="sorting/Q10sorting.HTML">Q10
+                        Enter a string array from the user and perform selection sort algorithm through recursion. also calculate the worst and best complexity with exact time ?
+                        </a>
+                    <a href="sorting/Q11sorting.HTML">Q11
+                        enter a string array from the user and perform bubble sort algorithm through iteration. also calculate the worst and best complexity with exact time. ?
+                        </a>
+                    <a href="sorting/Q12sorting.HTML">Q12
+                        Enter a string array from the user and perform bubble sort algorithm through recursion. also calculate the worst and best complexity with exact time?
+                        </a>
+                    <a href="sorting/Q13sorting.HTML">Q13
+                        Enter a string array from the user and perform insertion sort algorithm through iteration. also calculate the worst and best complexity with exact time.?</a>
+                    <a href="sorting/Q14sorting.HTML">Q14
+                        Enter a string array from the user and perform insertion sort algorithm through recursion. also calculate the worst and best complexity with exact time.?</a>
+                    <a href="sorting/Q15sorting.HTML">Q15Enter a string array from the user and perform merge sort algorithm through recursion. also calculate the worst and best complexity with exact time.?
+
+                    </a>
+                    <a href="sorting/Q16sorting.HTML">Q16Enter a string array from the user and perform quick sort algorithm through recursion. also calculate the worst and best complexity with exact time.?
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Queues</a>
+                <div class="dropdown-content">
+                    <a href="queues/Q1queues.html">Q1Implement the operations of simple queue in an integer array (insert, delete, peek, isempty, isfull)</a>
+                    <a href="queues/Q2queues.html">Q2Implement the operations of simple queue in an string array (insert, delete, peek, isempty, isfull)
+                    </a>
+                    <a href="queues/Q3queues.html">Q3Implement the operations of queue dynamically of integers (insert, delete, peek, isempty, isfull)
+                    </a>
+                    <a href="queues/Q4queues.html">Q4
+                        Implement the operations of queue dynamically of string (insert, delete, peek, isempty, isfull)
+                        
+                        </a>
+                    <a href="queues/Q5queues.html">Q5Implement the operations of circular queue in an integer array (insert, delete, peek, isempty, isfull)</a>
+                    <a href="queues/Q6queues.html">Q6Implement the operations of circular queue in an string array (insert, delete, peek, isempty, isfull)
+                    </a>
+                    <a href="queues/Q7queues.html">Q7
+                        Implement the operations of priority queue in an integer array (insert, delete, peek, isempty, isfull)
+                        </a>
+                    <a href="queues/Q8queues.html">Q8
+                        Implement the operations of priority queue in an integer array (insert, delete, peek, isempty, isfull)
+                        </a>
+                    <a href="queues/Q9queues.html">Q9Implement the operations of double ended queue in an integer array (insert, delete, peek, isempty, isfull)
+
+                    </a>
+                    <a href="queues/Q10queues.html">Q10
+                        Implement the operations of double ended queue in an string array (insert, delete, peek, isempty, isfull)
+                        </a>
+                    <a href="queues/Q11queues.html">Q11</a>
+                   
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Recursion</a>
+                <div class="dropdown-content">
+                    <a href="#">Q1</a>
+                    <a href="#">Q2</a>
+                    <a href="#">Q3</a>
+                    <a href="#">Q4</a>
+                    <a href="#">Q5</a>
+                    <a href="#">Q6</a>
+                    <a href="#">Q7</a>
+                    <a href="#">Q8</a>
+                    <a href="#">Q9</a>
+                    <a href="#">Q10</a>
+                    <a href="#">Q11</a>
+                    <a href="#">Q12</a>
+                    <a href="#">Q13</a>
+                    <a href="#">Q14</a>
+                    <a href="#">Q15</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">trees</a>
+                <div class="dropdown-content">
+                    <a href="Trees/Q1trees.html">Q1Construct binary tree from preorder and inorder traversal
+                    </a>
+                    <a href="Trees/Q2trees.html">Q2
+                        Print left view of binary tree</a>
+                    
+                    <a href="Trees/Q3trees.html">Q4
+                        construct binary tree from postorder and inorder traversal
+                        </a>
+                    <a href="Trees/Q4trees.html">Q5
+                        Find the maximum depth of binary tree
+                        </a>
+                    <a href="Trees/Q5trees.html">Q6
+                        Create binary search tree dynamically (insert, delete, search, preorder, inorder, postorder, minimum element)
+                        </a>
+                    <a href="Trees/Q7trees.html">Q7
+                        Find inorder predecessor and inorder successor of binary search tree (dynamically represented)
+                        </a>
+                    <a href="Trees/Q8trees.html">Q8
+                        Check whether binary search tree contains dead end
+                        </a>
+
+                </div>
+            
+        </ul>
+    </nav>
+</body>
+</html>
+
+

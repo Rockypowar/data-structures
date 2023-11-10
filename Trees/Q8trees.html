@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h><br>
+        #include <stdlib.h><br>
+        #include <limits.h><br>
+        
+        // Structure for a BST node<br>
+        struct TreeNode {<br>
+            int data;<br>
+            struct TreeNode* left;<br>
+            struct TreeNode* right;<br>
+        };
+        
+        // Function to create a new node<br>
+        struct TreeNode* createNode(int value) {<br>
+            struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));<br>
+            newNode->data = value;<br>
+            newNode->left = newNode->right = NULL;<br>
+            return newNode;<br>
+        }
+        
+        // Function to insert a new node into the BST<br>
+        struct TreeNode* insert(struct TreeNode* root, int value) {<br>
+            if (root == NULL) {<br>
+                return createNode(value);<br>
+            }
+        
+            if (value < root->data) {<br>
+                root->left = insert(root->left, value);<br>
+            } else if (value > root->data) {<br>
+                root->right = insert(root->right, value);<br>
+            }
+        
+            return root;<br>
+        }
+        
+        // Function to check if a BST has a dead end and print the dead-end nodes<br>
+        void hasDeadEnd(struct TreeNode* root, int min, int max) {<br>
+            if (root == NULL) {<br>
+                return;<br><br>
+            }
+        
+            // Check if the current node is a dead end<br>
+            if (min == max) {<br>
+                printf("Dead End Node: %d\n", root->data);<br>
+            }
+        
+            // Recursively check the left and right subtrees<br>
+            hasDeadEnd(root->left, min, root->data - 1);<br>
+            hasDeadEnd(root->right, root->data + 1, max);<br>
+        }
+        
+        int main() {<br>
+            struct TreeNode* root = NULL;<br>
+            //logic [l,root->data-1]<br>
+            //[root->data+1,r]<br>
+            root = insert(root, 8);//1 to infinity<br>
+            insert(root, 7);//1 to 7<br>
+            insert(root, 2);//1 to 6<br>
+            insert(root, 10);//9 to infinity<br>
+            insert(root, 9);//9 to 9<br>
+            insert(root, 13);//11 to infinity<br>
+            hasDeadEnd(root, 1, INT_MAX);<br>
+        
+            return 0;<br>
+        }
+</body>
+</html>

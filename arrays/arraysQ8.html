@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    //C program to enter an array from user and find maximum and minimum value? ?<br>
+
+#include<stdio.h><br>
+#include<conio.h><br>
+int main()<br>
+{
+    int array1[10],i,max,min;<br>
+    printf("Space allocation form 10 values is granted successfully");<br>
+    for ( i = 0; i < 10; i++)<br>
+    {
+        printf("\nEnter %d value : ",i+1);<br>
+        scanf("%d",&array1[i]);<br>
+    }
+
+        printf("Maximum or greatest value is:  ");<br>
+        max=array1[0];<br>
+       for ( i = 0; i < 10; i++)<br>
+    {
+        
+        if (array1[i]>max)<br>
+        {
+            max=array1[i];<br>
+        }
+        
+    }
+    printf("%d",max);<br>
+
+     printf("\nMinimum or smallest value is:  ");<br>
+            min=array1[0];<br>
+       for ( i = 0; i < 10; i++)<br>
+    {
+        
+        if (array1[i]<min)<br>
+        {
+            min=array1[i];<br>
+        }
+        
+    }
+    
+}
+
+OUTPUT : - <br>
+
+Space allocation form 10 values is granted successfully<br>
+Enter 1 value : 12<br>
+Enter 2 value : 10<br>
+Enter 3 value : 16<br>
+Enter 4 value : 22<br>
+Enter 5 value : 54<br>
+Enter 6 value : 41<br>
+Enter 7 value : 22<br>
+Enter 8 value : 93<br>
+Enter 9 value : 64<br><br>
+Enter 10 value : 72<br>
+Maximum or greatest value is:  93<br>
+Minimum or smallest value is:  10<br>
+    
+</body>
+</html>

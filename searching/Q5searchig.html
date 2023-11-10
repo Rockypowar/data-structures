@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h><br>
+
+        #include <conio.h><br>
+
+        
+        int search(int ary[], int size, int key)
+        {<br>
+
+            int mid, loc = -1, lb = 0, up = size - 1;<br>
+
+            while (lb <= up)<br>
+
+            { // Change the condition to lb <= up<br>
+
+                mid = (lb + up) / 2;<br>
+
+                if (ary[mid] == key)<br>
+
+                {
+                    loc = mid;<br>
+
+                    break;<br>
+
+                }
+                else if (key < ary[mid])<br>
+
+                {
+                    up = mid - 1;<br>
+
+                }
+                else
+                {
+                    lb = mid + 1;<br>
+
+                }
+            }
+            return loc;<br>
+
+        }
+        
+        int bubble(int ary[], int size)<br>
+
+        {
+            int i, j, temp;<br>
+
+            for (i = size - 1; i > 0; i--)<br>
+
+            {
+                for (j = 0; j <= i; j++)<br>
+
+                {
+                    if (ary[j] > ary[j + 1])<br>
+
+                    {
+                        temp = ary[j];<br>
+
+                        ary[j] = ary[j + 1];<br>
+
+                        ary[j + 1] = temp;
+                    }<br>
+
+                }
+            }
+            return 0;<br>
+
+        }
+        
+        void main()<br>
+
+        {
+            int ary[10], i, count, loc, num;<br>
+
+            printf("Enter your array size : ");<br>
+
+            scanf("%d", &count);<br>
+
+            for (i = 0; i < count; i++)<br>
+
+            {
+                printf("\nEnter %d value : ", i + 1);<br>
+
+                scanf("%d", &ary[i]);
+            }<br>
+
+        
+            printf("\nEnter the number you want to search : ");<br>
+
+            scanf("%d", &num);<br>
+
+            bubble(ary, count);<br>
+
+            loc = search(ary, count, num);<br>
+
+            if (loc == -1)<br>
+
+            {
+                printf("\nElement not found in array.");<br>
+
+            }
+            else<br>
+
+            {
+                printf("Element found at position  : %d", loc + 1);<br>
+
+            }
+        }
+</body>
+</html>

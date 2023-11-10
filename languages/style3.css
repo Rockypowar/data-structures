@@ -1,0 +1,15 @@
+.box{
+    float: left;
+}
+iframe{
+    height: 500px;
+    width: 575px;
+}
+.iframe-left{
+    width:300px;
+
+}
+.iframe-right{
+    width: 870px;
+
+}

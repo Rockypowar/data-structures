@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include<stdio.h> <br> 
+        #include<conio.h> <br>
+        int search(int ary[],int size,int key) <br>
+        {
+            int loc=-1,i; <br>
+            for ( i = 0; i < size; i++) <br> <br>
+            {
+                if (ary[i]==key) <br>
+                {
+                    loc=i; <br>
+                    break; <br> <br>
+                }
+                
+            }
+            return loc; <br>
+            
+        }
+        
+        void main() <br>
+        {
+            int ary[10],i,count,loc,num; <br>
+            printf("Enter your array size : "); <br>
+            scanf("%d",&count); <br>
+            for ( i = 0; i < count; i++) <br>
+            {
+                printf("\nEnter %d value : ",i+1); <br>
+                scanf("%d",&ary[i]); <br> <br>
+            }
+            printf("\nEnter the number you want to search : "); <br>
+            scanf("%d",&num); <br>
+            loc =search(ary,count,num); <br>
+            if (loc==-1) <br>
+            {
+                printf("\nElement not found in array."); <br>
+            }
+            else <br>
+            {
+                printf("Element found at position  : %d",loc+1);
+            }
+            
+        }
+</body>
+</html>

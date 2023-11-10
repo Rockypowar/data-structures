@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    //program to Enter an array from user and print the number which are positive ?<br>
+
+
+#include<stdio.h><br>
+
+
+int main(){   <br>
+
+int arr[10],i;<br>
+
+printf("You can only enter upto 10 values\n");<br>
+
+printf("Enter the elements in Array\n");<br>
+
+for( i=0;i<=9;i++)<br>
+
+{
+printf("%d Element:",i+1);<br>
+
+scanf("%d",&arr[i]);<br>
+
+
+printf("\n");<br>
+
+}
+/*-----------------------------------*/<br>
+
+//LOGIC
+printf("The  Positive elements are--> \n");<br>
+<br>
+
+for(i=0;i<10;i++)<br>
+
+if(arr[i] >= 0)<br>
+
+printf("%d\n",arr[i]);<br>
+
+
+/*---------------------------------*/<br>
+
+
+
+return 0;
+}<br>
+
+
+OUTPUT : - 
+<br>
+
+Space allocation form 10 values is granted successfully<br>
+
+Enter 1 value : 12<br>
+
+Enter 2 value : 15<br>
+
+Enter 3 value : -41<br>
+
+Enter 4 value : -55<br>
+
+Enter 5 value : 13<br>
+
+Enter 6 value : -99<br>
+
+Enter 7 value : 124<br>
+
+Enter 8 value : -88<br>
+
+Enter 9 value : 271<br>
+
+Enter 10 value : -368<br>
+
+Positive numbers in this given array are: <br>
+
+12<br>
+
+15<br>
+
+13<br>
+
+124<br>
+
+271<br>
+
+</body>
+</html>

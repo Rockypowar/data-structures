@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h><br>
+
+        #include <conio.h><br>
+            <br>
+
+        #include <time.h><br>
+
+        void insort_rec(int arr[], int n)<br>
+
+        {
+            int i, j, last;<br>
+
+            if (n <= 1)<br>
+
+            {
+                return; // 1 element is always sorted<br>
+
+            }
+        
+            // Sort the first n-1 elements<br>
+
+            insort_rec(arr, n - 1);<br>
+
+        
+            // Insert the last element in its correct position<br>
+
+            last = arr[n - 1];<br>
+
+            j = n - 2;<br>
+
+            //The last element of the array is stored in the variable last.<br>
+
+                // This inserts the last element into its correct sorted position within the first<br>
+
+                // n -1 elements of the array.This is done by shifting elements that are <br>
+
+                //greater than last one position to the right<br>
+
+                //until the correct position is found :<br>
+
+                while (j >= 0 && arr[j] > last)<br>
+
+                {
+                arr[j + 1] = arr[j];<br>
+
+                j--;
+            }<br>
+            <br>
+
+            arr[j + 1] = last;<br>
+
+        }
+        
+        void main()<br>
+        <br>
+
+        {
+
+            int ary[10], i, count;<br>
+
+            printf("Enter your array size : ");<br>
+
+            scanf("%d", &count);<br>
+
+            for (i = 0; i < count; i++)<br>
+
+            {
+                printf("\nEnter %d value : ", i + 1);<br>
+
+                scanf("%d", &ary[i]);<br>
+
+            }
+            clock_t start = clock();<br>
+
+            insort_rec(ary, count);<br>
+
+            clock_t end = clock();<br>
+
+            for (i = 0; i < count; i++)<br>
+
+            {
+                printf("%d,", ary[i]);<br>
+
+            }
+            double time_complexity = ((double)(end - start)) / CLOCKS_PER_SEC;<br>
+
+            printf("\nTime taken: %f seconds\n", time_complexity);
+        }
+</body>
+</html>

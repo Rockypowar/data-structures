@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    //c program to ENTER A STRING FROM THE USER,<br>
+
+// ENTER A CHARACTER AND PERFORM LINEAR SEARCH ALGORITHM THROUGH RECURSION.<br>
+
+
+#include <stdio.h><br>
+
+
+int l_srch_recur(char *source, char target, int index) {<br>
+
+    if (*source == '\0') {<br>
+
+        return -1;  // Character not found in the string<br>
+
+    }
+    if (*source == target) {<br>
+
+        return index;  // Character found at the current index<br>
+
+    }
+    return l_srch_recur(source + 1, target, index + 1);  <br>
+
+    // Recur with the next character and incremented index by 1. <br>
+
+    //and recur will automatically find the target in ary<br>
+
+}
+
+int main() {<br>
+
+    char input[100];  // Define a character array to store the input string<br>
+
+    char target;<br>
+
+
+    printf("Enter a string: ");<br>
+
+    gets(input);  // Read a string from the user<br>
+
+    printf("Enter a character to search: ");<br>
+
+    scanf(" %c", &target);  // Read a character to search (note the space before %c)<br>
+
+
+    int index = l_srch_recur(input, target, 0);
+    <br>
+
+    if (index != -1) {<br>
+
+        printf("Character '%c' found at index %d in the string.\n", target, index+1);<br>
+
+    } else {<br>
+
+        printf("Character '%c' not found in the string.\n", target);
+    }
+
+    return 0;
+}
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    // queue program using local variable only.<br>
+#include <stdio.h><br>
+#define MAX_SIZE 100<br>
+
+int q[MAX_SIZE];//array queue<br>
+int front = -1, rear = -1;<br>
+
+// empty<br>
+int is_empty() {<br>
+    return (front == -1);<br>
+}
+
+//full<br>
+int is_full() {<br>
+    return (rear == MAX_SIZE - 1);<br>
+}
+<br>
+// insert element<br>
+void enq(int value) {<br>
+    if (is_full()) {<br>
+        printf("Queue is full. Cannot insert.\n");<br>
+    } else {<br>
+        if (is_empty()) {<br>
+            front = rear = 0;<br>
+        } else {<br>
+            rear++;<br>
+        }
+        q[rear] = value;<br>
+        printf("Inserted: %d\n", value);<br>
+    }
+}
+
+// delete from front<br>
+void dq() {<br>
+    if (is_empty()) {<br>
+        printf("Queue is empty. Cannot delete.\n");<br>
+    } else {<br>
+        printf("Deleted: %d\n", q[front]);<br>
+        if (front == rear) {//if htere is only 1 value<br>
+            front = rear = -1;//initial stage of array queue<br>
+        } else {<br>
+            front++;//update front<br>
+        }
+    }
+}
+
+// Function to peek at the front element of the queue<br>
+int show() {<br>
+    if (is_empty()) {<br>
+        printf("Queue is empty. Cannot peek.\n");<br>
+        return -1; // to indicate no value<br>
+    }<br>
+    return q[rear];<br>
+}
+
+int main()<br>
+{
+    int value,ret=0;<br>
+    int get;<br>
+    do{<br>
+
+        printf("\n1.Enqueue Operation\n");<br>
+        printf("2.Dequeue Operation\n");<br>
+        printf("3.Display the Queue\n");<br>
+        printf("4.Exit\n");<br>
+        printf("Enter your choice of operations : ");<br>
+        scanf("%d",&get);<br>
+
+       switch (get)<br>
+        {
+            case 1:<br>
+            printf("Element to be inserted in the Queue\n : ");<br>
+            scanf("%d", &value);<br>
+            enq(value);<br>
+            break;<br>
+
+            case 2:<br>
+            dq();<br>
+            break;<br>
+
+            case 3:<br>
+            ret=show();<br>
+            if (ret==-1)<br>
+            {
+                printf("\n Noelement to delete");<br>
+            }<br>
+            else<br>
+            printf("value in front top : %d",ret);<br>
+            
+            break;<br>
+            case 4:<br>
+            printf("Program terminated");<br>
+            break;<br>
+
+            default:<br>
+            printf("Incorrect choice \n");<br>
+        } //end of switch <br>
+    } 
+        while (get != 4);<br>
+
+    // end of while<br>
+    
+    return 0;<br>
+} //end of main<br>s
+</body>
+</html>

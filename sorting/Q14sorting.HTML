@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h>
+        #include <string.h><br>
+
+        #include <stdlib.h><br>
+
+        #include <time.h><br>
+
+        
+        void insert_string_recur(char *arr[], int n) {<br>
+
+            if (n <= 1) return; //if the array has only one or zero elements it's already sorted.<br>
+
+        
+            // Recursively sort the first n-1 elements<br>
+
+            //already told in last program about why we do n-1<br>
+
+            insert_string_recur(arr, n - 1);<br>
+
+        
+            // Insert the last element into the sorted part of the array<br>
+
+            char *key = arr[n - 1];//set value<br>
+
+            int j = n - 2;//compare with predecessor value<br>
+
+            //same logic<br>
+
+            while (j >= 0 && strcmp(arr[j], key) > 0) {<br>
+
+                arr[j + 1] = arr[j];<br>
+
+                j--;<br>
+
+            }
+        //assigning, already told in last program why j+1<br>
+
+            arr[j + 1] = key;<br>
+
+        }
+        
+        int main()<br>
+
+        {
+            int i, n = 0;<br>
+
+            printf("Enter the number of elements in the array: ");<br>
+
+            scanf("%d", &n);<br>
+
+        
+            char *arr[n]; // let's get this thing clear that this is the size of string array<br>
+
+            for (i = 0; i < n; i++)<br>
+
+            {
+                arr[i] = (char *)malloc(100); // and here memory is allocated to the string not array<br>
+
+                printf("Enter string %d: ", i + 1);<br>
+
+                scanf("%s", arr[i]);<br>
+
+            }
+        
+            // start time<br>
+
+            clock_t start = clock();<br>
+
+        
+            // Perform Bubble Sort<br>
+
+            insert_string_recur(arr, n);<br>
+
+            // end time<br>
+
+            clock_t end = clock();<br>
+
+        
+            printf("Sorted array using Inseetion Sort:\n");<br>
+
+            for (i = 0; i < n; i++)<br>
+
+            {
+                printf("%s\n ", arr[i]);<br>
+
+            }
+        
+            // Calculate the time taken in seconds<br>
+
+            double timeTaken = ((double)(end - start)) / CLOCKS_PER_SEC;<br>
+
+            printf("\nTime taken: %f seconds\n", timeTaken);<br>
+
+            <br>
+
+        
+            // Deallocate memory for strings<br>
+
+            for (i = 0; i < n; i++)<br>
+
+            {<br>
+
+                free(arr[i]);<br>
+
+            }
+            return 0;
+        }
+</body>
+</html>

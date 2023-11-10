@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    #include<stdio.h><br>
+
+        #include<conio.h><br>
+
+        #include<time.h><br>
+
+        
+        void merge(int ary[],int lb,int mid,int up)<br>
+
+        {
+            int i=lb;<br>
+
+            int j=mid+1;<br>
+
+            int k=lb;<br>
+
+            int ary1[10];<br>
+
+            while (i<=mid && j<=up)<br>
+
+            {
+                if (ary[i]<ary[j])<br>
+
+                {
+                    ary1[k]=ary[i];<br>
+
+                    i++;k++;<br>
+
+                }
+                else<br>
+
+                {
+                ary1[k]=ary[j];<br>
+
+                j++;k++;<br>
+
+                }  
+            }
+            while (i<=mid)<br>
+
+            {
+                ary1[k]=ary[i];<br>
+
+                k++;i++;<br>
+
+            }
+        
+            while (j<=up)<br>
+
+            {
+                ary1[k]=ary[j];<br>
+
+                k++;j++;<br>
+
+            }
+            <br>
+
+            for ( i = lb; i <=up ; i++)<br>
+
+            {
+                ary[i]=ary1[i];<br>
+
+            }
+        }
+        void mr(int ary[],int lower,int upper)
+        {
+            int mid;
+            if (lower<upper)
+            {
+                mid=(lower+upper)/2;
+                mr(ary,lower,mid);
+                mr(ary,mid+1,upper);
+        
+                merge(ary,lower,mid,upper);
+            }
+        }
+        void main()
+        {
+            int ary[10], i, count;
+            printf("Enter your array size : ");
+            scanf("%d", &count);
+            for (i = 0; i < count; i++)
+            {
+                printf("\nEnter %d value : ", i + 1);
+                scanf("%d", &ary[i]);
+            }
+            clock_t start=clock();
+            mr(ary,0,count);
+            clock_t end =clock();
+            for ( i = 0; i < count; i++)
+            {
+                printf("%d,",ary[i]);
+            }
+            double time_complexity = ((double)(end - start)) / CLOCKS_PER_SEC;
+            printf("\nTime taken: %f seconds\n", time_complexity);
+        }
+</body>
+</html>

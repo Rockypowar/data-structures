@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h><br>
+
+        #include <conio.h><br>
+
+        #include <time.h><br>
+
+        
+        int insort(int ary[], int size)<br>
+
+        {
+            int key, i, j;<br>
+
+            for (i = 1; i < size; i++)<br>
+
+            {
+                key = ary[i];<br>
+
+                j = i - 1;<br>
+
+                while (j >= 0 && ary[j] > key)<br>
+                <br>
+
+                {
+                    ary[j + 1] = ary[j];<br>
+
+                    j--;<br>
+
+                }
+                ary[j + 1] = key;<br>
+
+            }
+            return 0;<br>
+
+        }
+        
+        void main()<br>
+
+        {
+            int ary[10], i, count;<br>
+
+            printf("Enter your array size : ");<br>
+
+            scanf("%d", &count);<br>
+
+            for (i = 0; i < count; i++)<br>
+
+            {
+                printf("\nEnter %d value : ", i + 1);<br>
+
+                scanf("%d", &ary[i]);<br>
+
+            }
+            clock_t start = clock();<br>
+
+            insort(ary, count);<br>
+
+            clock_t end = clock();<br>
+
+            for (i = 0; i < count; i++)<br>
+
+            {
+                printf("%d,", ary[i]);
+            }<br>
+
+            double time_complexity = ((double)(end - start)) / CLOCKS_PER_SEC;<br>
+
+            printf("\nTime taken: %f seconds\n", time_complexity);
+        }
+</body>
+</html>

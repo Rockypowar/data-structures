@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h><br>
+
+        #include <time.h><br>
+
+        
+        // Function to perform Bubble Sort<br>
+
+        int bubble(int ary[], int size)<br>
+
+        {
+            int i,j,temp;<br>
+
+            for ( i = size-1; i >0; i--)<br>
+
+            {
+                for ( j= 0; j <= i; j++)<br>
+
+                {
+                    if (ary[j]>ary[j+1])<br>
+
+                    {
+                        temp=ary[j];<br>
+
+                        ary[j]=ary[j+1];<br>
+
+                        ary[j+1]=temp;<br>
+
+                    }
+                    
+                }
+                
+            }
+            return 0;<br>
+
+            
+        }
+        <br>
+
+        int main() {
+            int i,n;<br>
+
+            printf("Enter the number of elements in the array: ");<br>
+
+            scanf("%d", &n);<br>
+
+        
+            int arr[n];<br>
+
+            printf("Enter %d integers:\n", n);<br>
+
+            for (i = 0; i < n; i++) {<br>
+
+                printf("Enter %d value : ",i+1);<br>
+
+                scanf("%d", &arr[i]);<br>
+
+            }
+        
+            // Record the start time<br>
+
+            clock_t start = clock();<br>
+
+        
+            // Perform Bubble Sort<br>
+
+            bubble(arr, n);
+            <br>
+
+            // Record the end time<br>
+            <br>
+
+            clock_t end = clock();<br>
+            <br>
+
+        
+            printf("Sorted array using Bubble Sort:\n");<br>
+
+            for (i = 0; i < n; i++) {<br>
+                <br>
+
+                printf("%d ", arr[i]);<br>
+
+            }
+            printf("\n");<br>
+
+            <br>
+
+            // Calculate the time taken in seconds<br>
+
+            double timeTaken = ((double)(end - start)) / CLOCKS_PER_SEC;<br>
+
+            printf("Time taken: %f seconds\n", timeTaken);<br>
+
+        
+            return 0;
+        }
+</body>
+</html>

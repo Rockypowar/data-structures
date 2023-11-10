@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h> <br>
+
+        int l_ary_recur(int source[], int target, int index, int size) {<br>
+
+            int l_ary_recur(int source[], int target, int index, int size) <br>
+
+            if (index >= size) {<br>
+
+                return -1;  // integer value not found in the array as the index exceeds size<br>
+
+            }<br>
+
+            if (source[index] == target) {<br>
+
+                return index;  // integer value found at the current index pass it to main<br>
+
+            }
+            return l_ary_recur(source, target, index + 1, size);  // recur occurs with next index<br>
+
+        }
+        
+        int main() {<br>
+
+            int arr[100];  // Define an integer array to store the input<br>
+
+            int target, size;<br>
+
+            int i;<br>
+
+            printf("Enter the size of the array: ");<br>
+
+            scanf("%d", &size);<br>
+
+        
+        
+            printf("Enter the elements of the array, one by one:\n");<br>
+
+            for (i = 0; i < size; i++) {<br>
+
+                printf("value %d : ",i+1);<br>
+
+                scanf("%d", &arr[i]);<br>
+
+            }
+        
+            printf("Enter an integer value to search for: ");<br>
+
+            scanf("%d", &target);<br>
+        
+            int index = l_ary_recur(arr, target, 0, size);<br>
+
+        
+            if (index != -1) {<br>
+
+                printf("Integer value %d found at index %d in the array.\n", target, index+1);<br>
+
+            } else {<br>
+
+                printf("Integer value %d not found in the array.\n", target);<br>
+
+            }
+        
+            return 0;<br>
+
+        }
+</body>
+</html>

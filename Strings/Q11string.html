@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    #include <stdio.h> <br>
+        #include <string.h> <br>
+        
+        int palindrome(char word[]) { <br>
+            int last_length = strlen(word) - 1; // Index of the last character <br>
+            int front = 0; // Index of the first character <br>
+        
+            while (front < last_length) { <br>
+                if (word[front] != word[last_length]) { <br>
+                    return -1; <br>
+                }
+                front++; <br>
+                last_length--; <br>
+            }
+        
+            return 1; <br>
+        }
+        
+        int main() { <br>
+            char Sentence[100]; <br>
+            int result = -1; <br> <br>
+        
+            printf("Enter the text: "); <br>
+            gets(Sentence); <br>
+            result = palindrome(Sentence); <br>
+            <br>
+            if (result == -1) { <br> <br>
+                printf("\nEntered string is not a palindrome\n"); <br>
+            } else { <br>
+                printf("\nString is a palindrome\n"); <br>
+            }
+        
+            return 0;
+        }
+    
+</body>
+</html>

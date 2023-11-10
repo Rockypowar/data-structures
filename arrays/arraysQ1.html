@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Q1</title>
+</head>
+<body>
+        //C program to enter an array from user and display all the value ?
+
+#include<stdio.h><br>
+
+int main(){  <br> 
+int arr[10],i;<br>
+
+printf("You can only enter upto 10 values\n");<br>
+printf("Enter the elements in Array\n");<br>
+for( i=0;i<=9;i++)<br>
+{
+printf("%d Element:",i+1);<br>
+scanf("%d",&arr[i]);<br>
+
+printf("\n");<br>
+}
+
+printf("The Array is given below\n");<br>
+for( i=0;i<=9;i++)<br>
+printf("%d\t",arr[i]);<br>
+return 0;<br>
+}
+
+OUTPUT:- 
+
+You can only enter upto 10 values <br>
+Enter the elements in Array <br>
+1 Element:12 <br>
+2 Element:14 <br>
+3 Element:45 <br>
+4 Element:79 <br>
+5 Element:45 <br>
+6 Element:78 <br>
+7 Element:22 <br>
+8 Element:10 <br>
+9 Element:33 <br>
+10 Element:52 <br>
+
+The Array is given below <br>
+12      14      45      79      45      78      22      10      33      52
+</body>
+</html>
